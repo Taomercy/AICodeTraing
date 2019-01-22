@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-# 梯度下降
+# 最小乘二，梯度下降
 import numpy as np
 import pylab
 

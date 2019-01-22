@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # coding:utf8
-# 最小乘二，矩阵求解
+# 矩阵求解
 from numpy import *
 import matplotlib.pylab as plt
 
@@ -35,7 +35,8 @@ def standRegres(xArray, yArray):
         return
 
     # 矩阵求解
-    ws = xTx.I * (xMatix.T*yMatix)
+    #ws = xTx.I * (xMatix.T*yMatix)
+    ws = xMatix.I * yMatix
     return ws
 
 
