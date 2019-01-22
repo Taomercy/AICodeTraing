@@ -3,7 +3,7 @@
 # 最小乘二，梯度下降
 import numpy as np
 import pylab
-
+import time
 
 def compute_error(b, m, data):
 
@@ -80,6 +80,7 @@ def plot_data(data, b, m):
 
 
 def Linear_regression():
+    start = time.time()
     # get train data
     data = np.loadtxt('data.csv', delimiter=',')
 
@@ -99,9 +100,13 @@ def Linear_regression():
 
     #optimizing b and m
     [b ,m] = optimizer(data,initial_b,initial_m,learning_rate,num_iter)
+    
 
     #print final b m error
-    print 'final formula parmaters:\n b = {1}\n m={2}\n error of end = {3} \n'.format(num_iter,b,m,compute_error(b,m,data))
+    print 'final formula parmaters:\n b = {1}\n m = {2}\n error of end = {3} \n'.format(num_iter,b,m,compute_error(b,m,data))
+
+    end = time.time()
+    print "use time:", end - start
 
     #plot result
     plot_data(data,b,m)
