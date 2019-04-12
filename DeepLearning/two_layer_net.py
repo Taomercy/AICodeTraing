@@ -46,4 +46,14 @@ class TwoLayerNet:
         grads['b2'] = numerical_gradient(loss_W, self.params['b2'])
 
         return grads
-    
+
+
+def main():
+    net = TwoLayerNet(input_size=784, hidden_size=100, output_size=10)
+    x = np.random.rand(100, 784)
+    y = net.predict(x)
+    print y
+
+
+if __name__ == '__main__':
+    main()
