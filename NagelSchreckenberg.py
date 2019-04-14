@@ -16,11 +16,14 @@ def main():
     v0 = 5        # 车辆的初始速度
     p = 0.3       # 随机减速概率
     times = 3000  # 模拟时间
+    vmax = 150    # 最高限速
 
     np.random.seed(0)
     x = np.random.rand(n) * path            # 所有车辆在环形公路上的随机位置
     x.sort()
     v = np.tile([v0], n).astype(np.float)   # 所有车辆的初速度向量
+    #v = np.random.normal(80, 4, n)         # 当车速服从正太分布的情况
+
     plt.figure(figsize=(10, 8), facecolor='w')
 
     for t in range(times):
@@ -37,7 +40,7 @@ def main():
                     v[i] -= 1
             else:
                 v[i] = d - 1
-        v = v.clip(0, 150)
+        v = v.clip(0, vmax)
         x += v
         clip(x, path)
 
