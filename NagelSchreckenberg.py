@@ -43,9 +43,9 @@ def main():
 
     plt.xlim(0, path)
     plt.ylim(0, times)
-    plt.xlabel(u'车辆位置', fontsize=16)
-    plt.ylabel(u'模拟时间', fontsize=16)
-    plt.title(u'环形公路车辆堵车模拟', fontsize=16)
+    plt.xlabel('x', fontsize=16)
+    plt.ylabel('times', fontsize=16)
+    plt.title('Nagel Schreckenberg', fontsize=16)
     plt.tight_layout(pad=2)
     plt.show()
 
