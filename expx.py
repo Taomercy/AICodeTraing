@@ -39,4 +39,4 @@ def lnx_main():
 
 if __name__ == '__main__':
     lnx_main()
-    expx_main
+    expx_main()
