@@ -23,7 +23,7 @@ def pca(XMat, k):
     index = np.argsort(-featValue)
     finalData = []
     if k > n:
-        print "k must lower than feature number"
+        print("k must lower than feature number")
         return
     else:
         selectVec = np.matrix(featVec.T[index[:k]])

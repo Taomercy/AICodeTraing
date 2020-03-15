@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-import os, sys
+import os
+import sys
 from functions import *
 
 
@@ -46,4 +47,3 @@ class TwoLayerNet:
         grads['b2'] = numerical_gradient(loss_W, self.params['b2'])
 
         return grads
-    

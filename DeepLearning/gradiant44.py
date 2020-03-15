@@ -37,14 +37,14 @@ def gradient_descent(f, init_x, lr=0.01, step_num=100):
         #x = x - grad * lr
         x[0] -= grad[0] * lr
         x[1] -= grad[1] * lr
-        print x
+        print(x)
     return x
 
 
 def main():
     init_x = np.array([-3, 4])
     grad = gradient_descent(function_model, init_x)
-    print grad
+    print(grad)
 
 
 if __name__ == '__main__':

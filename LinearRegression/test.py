@@ -35,8 +35,8 @@ for i in data:
 dlossdk = sympy.diff(loss, k)
 dlossdb = sympy.diff(loss, b)
 
-print "dlossdk:", dlossdk
-print "dlossdb:", dlossdb
+print("dlossdk:", dlossdk)
+print("dlossdb:", dlossdb)
 
 res = sympy.solve([dlossdk, dlossdb], [k, b])
 plotting(res)

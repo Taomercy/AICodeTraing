@@ -33,7 +33,7 @@ def optimizer(data, starting_b, starting_m, learning_rate, num_iter):
         # thie gradient step
         b, m = compute_gradient(b,m,data,learning_rate)
         if i % 100 == 0:
-            print 'iter {0}:error={1}'.format(i,compute_error(b,m,data))
+            print('iter {0}:error={1}'.format(i,compute_error(b,m,data)))
     return [b, m]
 
 
@@ -95,7 +95,7 @@ def Linear_regression():
 
     #train model
     #print b m error
-    print 'initial variables:\n initial_b = {0}\n intial_m = {1}\n error of begin = {2} \n'\
+    print('initial variables:\n initial_b = {0}\n intial_m = {1}\n error of begin = {2} \n')\
         .format(initial_b,initial_m,compute_error(initial_b,initial_m,data))
 
     #optimizing b and m
@@ -103,10 +103,10 @@ def Linear_regression():
     
 
     #print final b m error
-    print 'final formula parmaters:\n b = {1}\n m = {2}\n error of end = {3} \n'.format(num_iter,b,m,compute_error(b,m,data))
+    print('final formula parmaters:\n b = {1}\n m = {2}\n error of end = {3} \n').format(num_iter,b,m,compute_error(b,m,data))
 
     end = time.time()
-    print "use time:", end - start
+    print("use time:", end - start)
 
     #plot result
     plot_data(data,b,m)

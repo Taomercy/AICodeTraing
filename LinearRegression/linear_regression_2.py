@@ -31,7 +31,7 @@ def standRegres(xArray, yArray):
 
     # 如果矩阵行列式为0， 则没有逆矩阵
     if linalg.det(xTx) == 0.0:
-        print "This matrix is singular, cannot do inverse" 
+        print("This matrix is singular, cannot do inverse")
         return
 
     # 矩阵求解

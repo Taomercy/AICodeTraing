@@ -40,14 +40,14 @@ def main1():
     dlossdb = sympy.diff(loss, b)
 
     # 对k求偏导数
-    print "dlossdk:", dlossdk
+    print("dlossdk:", dlossdk)
     # 对b求偏导数
-    print "dlossdb:", dlossdb
+    print("dlossdb:", dlossdb)
 
     # 联立方程组求解
     res = sympy.solve([dlossdk, dlossdb], [k, b])
-    print "k =", res[k]
-    print "v =", res[b]
+    print("k =", res[k])
+    print("v =", res[b])
     # 作图
     plotting(res)
 
@@ -77,15 +77,15 @@ def main2():
     dlossdb = sympy.diff(loss, b)
     dlossdc = sympy.diff(loss, c)
     
-    print "dlossda:", dlossda
-    print "dlossdb:", dlossdb
-    print "dlossdc:", dlossdc
+    print("dlossda:", dlossda)
+    print("dlossdb:", dlossdb)
+    print("dlossdc:", dlossdc)
     
     # 联立方程组求解
     res = sympy.solve([dlossda, dlossdb, dlossdc], [a, b, c])
-    print "a =", res[a]
-    print "b =", res[b]
-    print "c =", res[c]
+    print("a =", res[a])
+    print("b =", res[b])
+    print("c =", res[c])
     # 作图
     plotting(res)
 

@@ -39,8 +39,8 @@ if __name__ == '__main__':
     x.shape = -1, 1
     y.shape = -1, 1
     
-    print "x:", x
-    print "y:", y
+    print("x:", x)
+    print("y:", y)
 
     models = [
         Pipeline([
@@ -71,7 +71,7 @@ if __name__ == '__main__':
     m = order_pool.size
     colors = []
     for c in np.linspace(16711680, 225, m):
-        colors.append('#%06x' % c)
+        colors.append('#%06x' % int(c))
 
     line_width = np.linspace(5, 2, m)
 
@@ -96,7 +96,7 @@ if __name__ == '__main__':
             if hasattr(lin, 'l1_ratio_'):
                 idx = output.find(u'系数')
                 output = output[:idx] + ('l1_ratio=%.6f' % lin.l1_ratio_) + output[idx:]
-            print output, lin.coef_.ravel()
+            print(output, lin.coef_.ravel())
 
             x_hat = np.linspace(x.min(), x.max(), num=100)
             x_hat.shape = -1, 1

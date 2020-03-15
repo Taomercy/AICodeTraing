@@ -51,7 +51,7 @@ def main():
     network = init_network()
     x = np.array([1.0, 0.5])
     y = forward(network, x)
-    print y
+    print(y)
 
 
 if __name__ == '__main__':
