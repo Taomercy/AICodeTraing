@@ -61,8 +61,10 @@ def main():
 
     # when x = 5000
     value = value_k*5000 + value_b
-    print("当 gdp= 5000, consume=", value)
+    print("当 gdp= 5000, consume=", int(value))
 
 
 if __name__ == '__main__':
+    # 计算矩阵列的相关系数
+    print("矩阵列的相关系数:\n", numpy.around(numpy.corrcoef(data.T), decimals=3))
     main()
