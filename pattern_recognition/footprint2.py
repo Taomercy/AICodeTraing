@@ -8,7 +8,7 @@ from PIL import Image
 
 
 # convert 参数主要选项: "L", "1"
-# camp 参数主要选项: "hot"(热力图), "PRGn", "rainbow", "binary"
+# camp 参数主要选项:  "rainbow", "binary", "hot", "PRGn"
 # clabel参数为是否标注等高线数值
 """
 cmap的候选值有
@@ -34,6 +34,8 @@ cmap的候选值有
 def footprint_recognition(image_file, convert="L", camp=None, clabel=True):
     gray = Image.open(image_file).convert(convert)
     img = array(gray)
+    # 对图片进行上下反转
+    img = img[::-1, :]
     contour = plt.contour(img, 3, colors='black', linewidths=0.5)
     if camp:
         contour = plt.contour(img, 10, cmap=camp)
