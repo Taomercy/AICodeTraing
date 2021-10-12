@@ -23,6 +23,7 @@ def footprint_recognition(image_file, convert="L", camp=None, clabel=True):
     if not os.path.exists("result"):
         os.mkdir("result")
     plt.savefig(save_file)
+    plt.clf()
 
 
 def main():
