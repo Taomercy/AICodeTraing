@@ -8,7 +8,7 @@ from PIL import Image
 
 
 # convert 参数主要选项: "L", "1"
-# camp 参数主要选项: "hot"(热力图), "PRGn", "rainbow"
+# camp 参数主要选项: "hot"(热力图), "PRGn", "rainbow", "binary"
 # clabel参数为是否标注等高线数值
 """
 cmap的候选值有
