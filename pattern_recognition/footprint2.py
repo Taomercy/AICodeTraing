@@ -3,7 +3,7 @@
 import os
 
 from numpy import array
-from pylab import *
+import matplotlib.pyplot as plt
 from PIL import Image
 
 
