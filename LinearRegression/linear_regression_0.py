@@ -9,6 +9,7 @@ data = array([
     [2.3, 4.6],
     [1.8, 7.6],
     [5.4, 15.8],
+    [10.2, 20.9],
 ])
 
 #data = loadtxt('data.csv', delimiter=',')
@@ -63,7 +64,10 @@ def main2():
         fig = plt.figure()
         ax = fig.add_subplot(111)
         ax.scatter(array(data[:, 0]), array(data[:, 1]))
-        x = arange(0, 10, 0.01)
+        max_number = data.max()
+        min_number = data.min()
+        step = (max_number-min_number)/1000
+        x = arange(min_number*0.1, max_number*1.1, step)
         y = curve2(x, paras[a], paras[b], paras[c])
         ax.plot(x, y, 'r')
         plt.show()
@@ -90,7 +94,48 @@ def main2():
     plotting(res)
 
 
+def curve3(x, a, b, c, d):
+    return a*x**3 + b*x**2 + c*x + d
+
+
+def main3():
+    a, b, c, d = sympy.symbols('a b c d')
+
+    def plotting(paras):
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        ax.scatter(array(data[:, 0]), array(data[:, 1]))
+        x = arange(0, 10, 0.01)
+        y = curve3(x, paras[a], paras[b], paras[c], paras[d])
+        ax.plot(x, y, 'r')
+        plt.show()
+
+    loss = sympy.Symbol('loss')
+    for i in data:
+        loss += (i[1] - curve3(i[0], a, b, c, d)) ** 2
+
+    dlossda = sympy.diff(loss, a)
+    dlossdb = sympy.diff(loss, b)
+    dlossdc = sympy.diff(loss, c)
+    dlossdd = sympy.diff(loss, d)
+
+    print("dlossda:", dlossda)
+    print("dlossdb:", dlossdb)
+    print("dlossdc:", dlossdc)
+    print("dlossdc:", dlossdd)
+
+    # 联立方程组求解
+    res = sympy.solve([dlossda, dlossdb, dlossdc, dlossdd], [a, b, c, d])
+    print("a =", res[a])
+    print("b =", res[b])
+    print("c =", res[c])
+    print("d =", res[d])
+    # 作图
+    plotting(res)
+
+
 if __name__ == '__main__':
     main1()
     main2()
+    main3()
 
