@@ -58,7 +58,9 @@ class Curve(object):
             code += "\t\tloss += (i[1] - curve(i[0], {})) ** 2\n".format(p_code)
             code += "\n".join(["\tdlossd{0} = sympy.diff(loss, {0})".format(p) for p in parameters])
             code += "\n\tres = sympy.solve([{}], [{}])\n".format(", ".join(["dlossd{0}".format(p) for p in parameters]), p_code)
-            code += "\tplotting(res, data)\n"
+            code += "\n\tprint(\"formula = {}\")\n".format(self.formula)
+            code += "\n".join(["\tprint(\"{0} =\", res[{0}])".format(p) for p in parameters])
+            code += "\n\tplotting(res, data)\n"
             fw.write(code)
 
     def run(self, data):
@@ -68,5 +70,5 @@ class Curve(object):
 
 
 if __name__ == '__main__':
-    c = Curve(2)
+    c = Curve(3)
     c.run(data)
