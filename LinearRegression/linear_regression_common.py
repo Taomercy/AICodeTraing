@@ -7,8 +7,8 @@ data = array([
     [2.3, 4.6],
     [1.8, 7.6],
     [5.4, 15.8],
-    [10.2, 20.9],
-    [42.5, 12.7],
+    [6.2, 20.9],
+    [7.5, 12.7],
 ])
 
 
@@ -45,8 +45,8 @@ class Curve(object):
             code += "\t\tfig = plt.figure()\n"
             code += "\t\tax = fig.add_subplot(111)\n"
             code += "\t\tax.scatter(array(data[:, 0]), array(data[:, 1]))\n"
-            code += "\t\tmax_number = data.max()\n"
-            code += "\t\tmin_number = data.min()\n"
+            code += "\t\tmax_number = data[:, 0].max()\n"
+            code += "\t\tmin_number = data[:, 0].min()\n"
             code += "\t\tstep = (max_number-min_number)/1000\n"
             code += "\t\tx = arange(min_number*0.1, max_number*1.1, step)\n"
             paras = ["paras[{}]".format(i) for i in parameters]
@@ -70,5 +70,5 @@ class Curve(object):
 
 
 if __name__ == '__main__':
-    c = Curve(3)
+    c = Curve(2)
     c.run(data)
