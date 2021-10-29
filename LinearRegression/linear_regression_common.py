@@ -2,15 +2,6 @@ import matplotlib.pylab as plt
 import sympy
 from numpy import array, arange
 
-data = array([
-    [1.2, 3.6],
-    [2.3, 4.6],
-    [1.8, 7.6],
-    [5.4, 15.8],
-    [6.2, 20.9],
-    [7.5, 12.7],
-])
-
 
 class Curve(object):
     formula = None
@@ -70,5 +61,19 @@ class Curve(object):
 
 
 if __name__ == '__main__':
+    data1 = array([
+        [1.2, 3.6],
+        [2.3, 4.6],
+        [1.8, 7.6],
+        [5.4, 15.8],
+        [3.4, 9.9]
+    ])
+
+    gdp = [22460, 11226, 34547, 4851, 5444, 2662, 4549]
+    consume = [7326, 4490, 11546, 2396, 2208, 1608, 2035]
+    data2 = array([gdp, consume]).T
+
     c = Curve(2)
-    c.run(data)
+    c.run(data1)
+    c = Curve(1)
+    c.run(data2)
