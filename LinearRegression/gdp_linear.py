@@ -25,6 +25,7 @@ def main():
         ax.scatter(array(data[:, 0]), array(data[:, 1]))
         x = arange(0, 50000, 50)
         y = curve(x, paras[k], paras[b])
+        # plt.gca().invert_xaxis() #坐标轴逆序
         ax.plot(x, y, 'r')
         plt.show()
 

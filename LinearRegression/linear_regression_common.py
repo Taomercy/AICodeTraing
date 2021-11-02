@@ -73,7 +73,6 @@ if __name__ == '__main__':
     consume = [7326, 4490, 11546, 2396, 2208, 1608, 2035]
     data2 = array([gdp, consume]).T
 
-    c = Curve(2)
-    c.run(data1)
     c = Curve(1)
+    c.run(data1)
     c.run(data2)
